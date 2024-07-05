@@ -9,7 +9,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      id_trans: {
+        type: Sequelize.INTEGER
+      },
       id_barang: {
+        type: Sequelize.INTEGER
+      },
+      Qty: {
         type: Sequelize.INTEGER
       },
       harga: {

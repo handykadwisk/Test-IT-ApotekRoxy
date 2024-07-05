@@ -1,13 +1,17 @@
-const express = require('express')
-const router = express.Router()
-const master = require('./master')
-const transaksi = require('./transaksi')
+const express = require("express");
+const router = express.Router();
+const routerMaster = require("./route.master");
+const routerTransaksi = require("./route.transaksi");
 
-router.get('/',(req, res)=>{
-    res.send('API active...')
-})
+router.get("/", (req, res) => {
+	res.send("API is running...");
+});
 
-router.use('/master', master )
-// router.use('/transaksi', transaksi )
+router.use("/master", routerMaster);
+router.use("/transaksi", routerTransaksi);
+
+router.get("/*", (req, res) => {
+	res.send("Route not found.");
+});
 
 module.exports = router;
